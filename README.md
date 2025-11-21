@@ -46,6 +46,7 @@ The system features a dual-login mechanism with distinct permission levels:
 *Otto.py* :Module for 'Otto' user logic (Promotions/Missions)
 *file_handler.py*: Custom utility for JSON reading/writing
 *valkyries_database.json* : Persistent storage file
+
 ## Future Improvements
 * As I continue learning, I plan to implement:
   * *GUI:* Building a frontend using `Tkinter`.
