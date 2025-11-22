@@ -1,4 +1,5 @@
 import file_handler
+import pandas as pd
 def otto():
     vall = file_handler.load_data('valkyries_database.json')
     try:
@@ -16,7 +17,8 @@ def otto():
             print('---------------------------------------')
             choice = input('Enter your choice: ')
             if choice == '1':
-                print(vall)
+                df = pd.DataFrame(vall,index = range(1,len(vall)+1))
+                print(df)
             elif choice == '2':
                 for i in vall:
                     if i['Status'] == 'Available':
@@ -25,20 +27,27 @@ def otto():
                         print('No valkyries available')
             elif choice == '3':
                 for i in vall:
-                    if i['Status'] != 'None':
+                    if i['Mission'] != 'None':
                         print(i)
-                    else:
-                        print('No valkyries on missions')
+                else:
+                    print('No valkyries on missions')
             elif choice == '4':
                 name = input('Enter the name of the valkyrie: ')
                 mission = input('Enter the mission: ')
                 for i in vall:
                     if i['Name'] == name:
-                        i['Mission'] = mission
-                        print('Mission has been assigned.')
-                        file_handler.save_data(vall, 'valkyries_database.json')
-                    elif i['Name'] != name:
-                        print('Valkyrie not found!Enter valid Valkyrie name')
+                        if i['Status'] == 'Injured' or i['Status'] == 'Under medical treatment':
+                            print(f'Valkyrie is under medical care.Cannot Assign a mission to {i}')
+                        elif i['Status'] =='Deployed':
+                            print(f'Valkyrie is already on mission.Cannot Assign a mission to {i}')
+                        else:
+                            i['Mission'] = mission
+                            i['Status'] = 'Deployed'
+                            print('Mission assigned successfully!')
+                            file_handler.save_data(vall, 'valkyries_database.json')
+                        break 
+                else:
+                    print('Valkyrie not found!Enter valid valkyrie name')
             elif choice == '5':
                 rank = input('Enter the rank of the valkyrie: ')
                 chi = input('Do you wish to see which valkyries of that rank is availabl?(y/n): ')
@@ -77,6 +86,6 @@ def otto():
                 print('Invalid choice!Choose between 1-7')
     except ValueError:
         print('Invalid choice!Please enter a number')
+otto()
 
-    
             

@@ -1,1 +1,119 @@
-[]
+[
+    {
+        "Name": "Erdos Helia",
+        "Rank": "A",
+        "Branch": "Germany",
+        "Status": "Deployed",
+        "Mission": "Protect",
+        "ERT": "24 hours",
+        "EMT": "None"
+    },
+    {
+        "Name": "Coralie 6626 Planck",
+        "Rank": "A",
+        "Branch": "Germany",
+        "Status": "Available",
+        "Mission": "None",
+        "ERT": "24 hours",
+        "EMT": "None"
+    },
+    {
+        "Name": "Rita Rossweise",
+        "Rank": "S",
+        "Branch": "Britain",
+        "Status": "Available",
+        "Mission": "None",
+        "ERT": "24 hours",
+        "EMT": "None"
+    },
+    {
+        "Name": "Durandal Bianka Atageina",
+        "Rank": "S",
+        "Branch": "Africa",
+        "Status": "Available",
+        "Mission": "None",
+        "ERT": "24 hours",
+        "EMT": "None"
+    },
+    {
+        "Name": "Alvitir",
+        "Rank": "B",
+        "Branch": "UAE",
+        "Status": "Available",
+        "Mission": "None",
+        "ERT": "24 hours",
+        "EMT": "None"
+    },
+    {
+        "Name": "Sussanah",
+        "Rank": "A",
+        "Branch": "UAE",
+        "Status": "Available",
+        "Mission": "None",
+        "ERT": "24 hours",
+        "EMT": "None"
+    },
+    {
+        "Name": "Li Sushang",
+        "Rank": "S",
+        "Branch": "China",
+        "Status": "Available",
+        "Mission": "None",
+        "ERT": "24 hours",
+        "EMT": "None"
+    },
+    {
+        "Name": "Fu Hua",
+        "Rank": "S",
+        "Branch": "China",
+        "Status": "Available",
+        "Mission": "None",
+        "ERT": "24 hours",
+        "EMT": "None"
+    },
+    {
+        "Name": "Raiden Mei",
+        "Rank": "S",
+        "Branch": "Japan",
+        "Status": "Available",
+        "Mission": "None",
+        "ERT": "24 hours",
+        "EMT": "None"
+    },
+    {
+        "Name": "Shigure Kira",
+        "Rank": "A",
+        "Branch": "USA",
+        "Status": "Available",
+        "Mission": "None",
+        "ERT": "24 hours",
+        "EMT": "None"
+    },
+    {
+        "Name": "Lyle Collodi",
+        "Rank": "B",
+        "Branch": "Ireland",
+        "Status": "Available",
+        "Mission": "None",
+        "ERT": "24 hours",
+        "EMT": "None"
+    },
+    {
+        "Name": "Rozaliya Olenyeva",
+        "Rank": "B",
+        "Branch": "Siberia",
+        "Status": "Available",
+        "Mission": "None",
+        "ERT": "24 hours",
+        "EMT": "None"
+    },
+    {
+        "Name": "Liliya Olenyeva",
+        "Rank": "B",
+        "Branch": "Siberia",
+        "Status": "Available",
+        "Mission": "None",
+        "ERT": "24 hours",
+        "EMT": "None"
+    }
+]

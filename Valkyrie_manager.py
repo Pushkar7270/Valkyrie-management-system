@@ -1,5 +1,6 @@
 import time 
 import file_handler
+import pandas as pd
 def valk():
     valks = file_handler.load_data('valkyries_database.json')
     try:
@@ -51,7 +52,8 @@ def valk():
                     elif valks == []:
                         print('Database is empty')
             elif choice =='4':
-                print(valks)
+                df = pd.DataFrame(valks,index = range(1,len(valks)+1))
+                print(df)
                 if valks == []:
                     print('Database is empty')
             elif choice =='5':
@@ -73,7 +75,7 @@ def valk():
                 vlk1 = input('Enter the name of the valkyrie: ')
                 avail = input('Enter the new status: ')
                 if i['Name'] == vlk1:
-                    i['Status'] == avail
+                    i['Status'] = avail
                     print('Status updated successfully')
                     file_handler.save_data(valks, 'valkyries_database.json')
                 elif valks == []:
@@ -98,7 +100,7 @@ def valk():
                 emt = input('Enter the new EMT: ')
                 for i in valks:
                     if i['Name'] == char:
-                        i['EMT'] == emt
+                        i['EMT'] = emt
                         print('Estimated mission Time updated successfully')
                         file_handler.save_data(valks,'valkyries_database.json')
                     elif valks == []:
