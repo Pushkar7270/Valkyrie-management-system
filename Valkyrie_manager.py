@@ -112,4 +112,3 @@ def valk():
                 print('Invalid choice.Choose number between 1-9')
     except ValueError:
         print('Invalid choice')
-valk()

@@ -98,6 +98,3 @@ def otto():
                 print('Invalid choice!Choose between 1-7')
     except ValueError:
         print('Invalid choice!Please enter a number')
-
-
-            
