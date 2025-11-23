@@ -37,20 +37,19 @@ def valk():
                 print('Valkyrie added successfully!')
                 file_handler.save_data(valks,'valkyries_database.json')
             elif choice =='2':
+                avail = 0
                 for i in valks:
                     if i['Status'] == 'Available':
+                        avail +=1
                         print(i)
-                    else:
-                        print('No Valkyries are available')
-                        continue
-                    if valks == []:
-                        print('Database is empty')
+                if avail == 0:
+                    print('No valkyries are available')
+                if valks == []:
+                    print('Database is empty')            
             elif choice == '3':
                 for i in valks:
                     if i['Mission'] != 'None':
                         print(i)
-                    elif valks == []:
-                        print('Database is empty')
             elif choice =='4':
                 df = pd.DataFrame(valks,index = range(1,len(valks)+1))
                 print(df)
@@ -74,15 +73,16 @@ def valk():
             elif choice == '6':
                 vlk1 = input('Enter the name of the valkyrie: ')
                 avail = input('Enter the new status: ')
-                if i['Name'] == vlk1:
-                    i['Status'] = avail
-                    print('Status updated successfully')
-                    file_handler.save_data(valks, 'valkyries_database.json')
-                elif valks == []:
-                    print('Database is empty')
-                elif vlk1.isdigit() or avail.isdigit():
-                    print('invalid valkyrie name!')
-                    continue
+                for i in valks:
+                    if valks == []:
+                        print('Database is empty')
+                    if i['Name'] == vlk1:
+                        i['Status'] = avail
+                        print('Status updated successfully')
+                        file_handler.save_data(valks, 'valkyries_database.json')
+                    elif vlk1.isdigit() or avail.isdigit():
+                        print('invalid valkyrie name!')
+                        continue
             elif choice == '7':
                 valk2 = input('Enter the name of the valkyrie.')
                 Ert = input('Enter the new ERT: ')
@@ -91,10 +91,9 @@ def valk():
                         i['ERT'] = Ert
                         print('ERT updated successfully')
                         file_handler.save_data(valks, 'valkyries_database.json')
-                    elif i['Name'] != valk2:
-                        print('Valkyrie not found!')
-                    else:
-                        print('Write valid valkyrie name please!')
+                        break
+                else:
+                    print('Valkyrie not found')
             elif choice == '8':
                 char = input('Enter the name of the valkyrie: ')
                 emt = input('Enter the new EMT: ')
@@ -113,4 +112,4 @@ def valk():
                 print('Invalid choice.Choose number between 1-9')
     except ValueError:
         print('Invalid choice')
-
+valk()

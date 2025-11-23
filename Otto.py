@@ -20,17 +20,21 @@ def otto():
                 df = pd.DataFrame(vall,index = range(1,len(vall)+1))
                 print(df)
             elif choice == '2':
+                ab = 0
                 for i in vall:
                     if i['Status'] == 'Available':
+                        ab+=1
                         print(i)
-                    else:
-                        print('No valkyries available')
+                if ab == 0:
+                    print('No available valkyries')
             elif choice == '3':
+                m =0
                 for i in vall:
                     if i['Mission'] != 'None':
+                        m+=1
                         print(i)
-                    else:
-                        print('No valkyries on missions')
+                if m == 0:
+                    print('No valkyries on missions')
             elif choice == '4':
                 name = input('Enter the name of the valkyrie: ')
                 mission = input('Enter the mission: ')
@@ -52,16 +56,22 @@ def otto():
                 rank = input('Enter the rank of the valkyrie: ')
                 chi = input('Do you wish to see which valkyries of that rank is availabl?(y/n): ')
                 if chi.lower() == 'y':
+                    r = 0
                     for i in vall:
                         if i['Rank'] == rank:
+                            r+=1
                             print(i)
-                        else: 
-                            print('No valkyries of that rank!')
+                    if r == 0: 
+                        print('No valkyries of that rank!')
                     print('---------------------------------------')
                     print('available valkyries:')
+                    ar = 0
                     for i in vall:
                         if i['Status'] == 'Available' and i['Rank'] == rank:
+                            ar +=1
                             print(i)
+                    if ar == 0:
+                        print('No available valkyries of that rank')
                 elif chi.lower() == 'n':
                     for i in vall:
                         if i['Rank'] == rank:
@@ -72,13 +82,15 @@ def otto():
             elif choice == '6':
                 name = input('Enter the name of the valkyrie: ')
                 rnk = input('Enter the new rank of the valkyrie: ')
+                nr = 0
                 for i in vall:
                     if i['Name'] == name:
+                        nr +=1
                         i['Rank'] = rnk
                         print('Rank promotion successful!')
                         file_handler.save_data(vall, 'valkyries_database.json')
-                    else:
-                        print('Valkyrie not found!')
+                if nr == 0:
+                    print('Valkyrie not found!')
             elif choice == '7':
                 print('Exiting...')
                 break
