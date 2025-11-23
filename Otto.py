@@ -29,8 +29,8 @@ def otto():
                 for i in vall:
                     if i['Mission'] != 'None':
                         print(i)
-                else:
-                    print('No valkyries on missions')
+                    else:
+                        print('No valkyries on missions')
             elif choice == '4':
                 name = input('Enter the name of the valkyrie: ')
                 mission = input('Enter the mission: ')
