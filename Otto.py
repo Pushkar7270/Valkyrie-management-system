@@ -47,6 +47,7 @@ def otto():
                         else:
                             i['Mission'] = mission
                             i['Status'] = 'Deployed'
+                            i['ERT'] = 'Not possible'
                             print('Mission assigned successfully!')
                             file_handler.save_data(vall, 'valkyries_database.json')
                         break 
